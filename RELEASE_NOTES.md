@@ -23,4 +23,4 @@ See [Installation](INSTALLATION.md) for Docker Compose and Unraid instructions.
 
 HomeOS's application source is private. Third-party components keep their own licences.
 
-[Licence](LICENSE.md) · [Third-party notices](THIRD_PARTY_NOTICES.md) · [Support](SUPPORT.md)
+[HomeOS licence](HOMEOS-LICENSE.md) · [MIT License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md) · [Support](SUPPORT.md)

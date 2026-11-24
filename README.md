@@ -74,6 +74,8 @@ Use [GitHub Issues](https://github.com/ozkernel/homeos/issues/new/choose) to rep
 
 ## Licence and acknowledgements
 
-HomeOS's own application code is **proprietary**, not open source. A public repository does not mean the application code is freely licensed. See [HomeOS licence](LICENSE.md), [third-party notices](THIRD_PARTY_NOTICES.md), and [third-party source information](THIRD_PARTY_SOURCES.md). The individual third-party licences continue to apply to those components.
+The installer files, templates, metadata and documentation in this repository are licensed under the [MIT License](LICENSE). The HomeOS name, logo and icon (`docs/assets/homeos-logo.png` and `templates/homeos-icon.png`) are not covered by the MIT License; they may be used only to identify HomeOS, such as in the Unraid template and app listings.
+
+The HomeOS application, its private source code and the proprietary components of the HomeOS Docker image are **not** open source and remain under the [HomeOS licence](HOMEOS-LICENSE.md). See [third-party notices](THIRD_PARTY_NOTICES.md) and [third-party source information](THIRD_PARTY_SOURCES.md). The individual third-party licences continue to apply to those components.
 
 HomeOS is not affiliated with Unraid, Proxmox or the other projects it integrates with.

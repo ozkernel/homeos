@@ -2,7 +2,9 @@
 
 Copyright © 2026 ozkernel. All rights reserved.
 
-HomeOS is proprietary software. These terms apply to the HomeOS application components for which ozkernel holds rights.
+HomeOS is proprietary software. These terms apply to the HomeOS application components for which ozkernel holds rights, including the HomeOS application, its private source code and the proprietary components of the HomeOS Docker image.
+
+The installer files, templates, metadata and documentation in the public `ozkernel/homeos` repository are licensed separately under the [MIT License](LICENSE). That licence does not apply to the HomeOS application or its Docker image, or to the HomeOS name, logo and icon, which may be used only to identify HomeOS.
 
 You may download, install and use officially distributed HomeOS Docker images, subject to any terms supplied with that distribution. Except as permitted by applicable law, you may redistribute, resell, sublicense or republish the proprietary components, including in a modified image, only with written permission from ozkernel.
 

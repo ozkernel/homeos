@@ -6,7 +6,7 @@ HomeOS is an **AI-assisted project** whose maintainer is learning software devel
 
 ## What this repository accepts
 
-This repository contains **public installation and documentation files**, not the HomeOS application source. You may propose improvements to docs, template settings and support guidance through GitHub Issues or pull requests.
+This repository contains **public installation and documentation files**, not the HomeOS application source. You may propose improvements to docs, template settings and support guidance through GitHub Issues or pull requests. Contributions to this repository are accepted under its [MIT License](LICENSE).
 
 For a new feature or integration, open an **Idea / feature request** issue. For an application-code fix, open a **Bug report** issue explaining the problem first. Private source access is **not automatically available**, and you should never ask for a production API key or upload confidential code.
 

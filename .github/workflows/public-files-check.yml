@@ -16,11 +16,15 @@ jobs:
           from pathlib import Path
           import xml.etree.ElementTree as ET
           root=Path('.')
-          required=['README.md','INSTALLATION.md','LICENSE.md','THIRD_PARTY_NOTICES.md',
+          required=['README.md','INSTALLATION.md','LICENSE','HOMEOS-LICENSE.md','THIRD_PARTY_NOTICES.md',
                     'THIRD_PARTY_SOURCES.md','docker-compose.yml','.env.example',
                     'templates/homeos.xml']
           for name in required:
               assert (root/name).is_file(), f'Missing: {name}'
+          licence=Path('LICENSE').read_text(encoding='utf-8')
+          assert licence.startswith('MIT License') and 'Copyright (c) 2026 ozkernel' in licence, 'LICENSE must be the MIT licence for this repository'
+          assert not Path('LICENSE.md').exists(), 'The proprietary licence is HOMEOS-LICENSE.md'
+          assert 'proprietary' in Path('HOMEOS-LICENSE.md').read_text(encoding='utf-8'), 'HOMEOS-LICENSE.md must keep the HomeOS licence'
           ET.parse('templates/homeos.xml')
           assert not Path('.env').exists(), 'Never commit .env'
           assert not Path('src').exists(), 'Private application source should not be in this public repository'

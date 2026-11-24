@@ -2,7 +2,7 @@
 
 These notices cover the HomeOS v1.0.0 Linux amd64 production image and its browser assets.
 
-The [HomeOS Licence](LICENSE.md) covers the proprietary application. The terms below govern the identified third-party works. [Third-party sources](THIRD_PARTY_SOURCES.md) gives the matching runtime archive and verification procedure.
+The [HomeOS Licence](HOMEOS-LICENSE.md) covers the proprietary application. The terms below govern the identified third-party works. [Third-party sources](THIRD_PARTY_SOURCES.md) gives the matching runtime archive and verification procedure.
 
 ## Scope
 
