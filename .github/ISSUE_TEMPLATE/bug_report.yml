@@ -1,0 +1,51 @@
+name: Bug report
+description: Report something that isn't working in HomeOS
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please **never include passwords, API keys, setup tokens, full .env files or private personal information**. Report security vulnerabilities privately through SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: HomeOS version
+      description: Version shown in HomeOS settings
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Installation platform
+      options:
+        - Unraid
+        - Docker Compose (Linux)
+        - Docker Desktop
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: integration
+    attributes:
+      label: Affected page or integration
+      placeholder: "For example, Lidarr calendar, Unraid CPU usage"
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Explain expected and actual behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitised logs or screenshots (optional)
+      description: Redact all credentials, private addresses and personal information

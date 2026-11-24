@@ -1,0 +1,37 @@
+name: homeos-dashboard
+services:
+  homeos:
+    image: ${HOMEOS_IMAGE:-ghcr.io/ozkernel/homeos:1.0.0}
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${HOMEOS_BIND:-127.0.0.1}:${HOMEOS_HOST_PORT:-3080}:3080"
+    environment:
+      HOMEOS_DEMO: "${HOMEOS_DEMO:-true}"
+      ADMIN_USERNAME: "${ADMIN_USERNAME:-}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-}"
+      ADMIN_PASSWORD_FILE: "${ADMIN_PASSWORD_FILE:-}"
+      ADMIN_EMAIL: "${ADMIN_EMAIL:-}"
+      HOMEOS_BIND: "${HOMEOS_BIND:-127.0.0.1}"
+      HOMEOS_LOCAL_BOOTSTRAP: "${HOMEOS_LOCAL_BOOTSTRAP:-false}"
+      HOMEOS_TRUSTED_PROXIES: "${HOMEOS_TRUSTED_PROXIES:-}"
+      HOMEOS_LOG_LEVEL: "${HOMEOS_LOG_LEVEL:-INFO}"
+      HOMEOS_SECURITY_LOGGING: "${HOMEOS_SECURITY_LOGGING:-true}"
+      HOMEOS_HTTPS_ONLY: "${HOMEOS_HTTPS_ONLY:-false}"
+      HOMEOS_SHUTDOWN_MS: "${HOMEOS_SHUTDOWN_MS:-8000}"
+      MYFILES_STORAGE_PATH: /app/data/myfiles
+      TZ: "${TZ:-Australia/Melbourne}"
+    volumes:
+      - ${HOMEOS_CONFIG_HOST_PATH:-homeos_config}:/config
+      - ${MYFILES_HOST_PATH:-homeos_myfiles}:/app/data/myfiles
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  homeos_config:
+  homeos_myfiles:

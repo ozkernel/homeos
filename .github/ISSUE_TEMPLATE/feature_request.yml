@@ -1,0 +1,49 @@
+name: Idea / feature request
+description: Suggest a new feature, integration or improvement for HomeOS
+title: "[Idea]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing an idea for HomeOS! Ideas are handled here in GitHub Issues, not Discussions.
+        Please **do not include passwords, API keys, tokens, .env files, private addresses or personal information**.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of HomeOS?
+      options:
+        - Dashboard and widgets
+        - Servers and infrastructure
+        - Media integrations
+        - Network integrations
+        - Calendar and workspace
+        - Installation and updates
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What's your idea?
+      description: Describe what you would like HomeOS to do
+      placeholder: "I'd like HomeOS to..."
+    validations:
+      required: true
+  - type: textarea
+    id: benefit
+    attributes:
+      label: Why would this help?
+      description: Explain the problem it would solve or how it would improve HomeOS
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: How should it work? (optional)
+      description: Any example screens, behaviour or settings you'd like
+  - type: textarea
+    id: additional
+    attributes:
+      label: Extra details or screenshots (optional)
+      description: Remove personal information before attaching screenshots

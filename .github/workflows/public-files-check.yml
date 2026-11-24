@@ -1,0 +1,31 @@
+name: Public repository checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check-public-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate public installer metadata
+        shell: bash
+        run: |
+          python3 - <<'PYTEST'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          root=Path('.')
+          required=['README.md','INSTALLATION.md','LICENSE.md','THIRD_PARTY_NOTICES.md',
+                    'THIRD_PARTY_SOURCES.md','docker-compose.yml','.env.example',
+                    'templates/homeos.xml']
+          for name in required:
+              assert (root/name).is_file(), f'Missing: {name}'
+          ET.parse('templates/homeos.xml')
+          assert not Path('.env').exists(), 'Never commit .env'
+          assert not Path('src').exists(), 'Private application source should not be in this public repository'
+          assert not Path('third-party-source').exists(), 'Do not upload private build trees here'
+          print('Public files look structurally complete')
+          PYTEST
+      - name: Validate Docker Compose structure
+        run: docker compose --env-file .env.example config --quiet
