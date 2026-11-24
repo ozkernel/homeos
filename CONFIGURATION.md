@@ -20,6 +20,8 @@ Edit your **private local** `.env` file, not `.env.example` in the public reposi
 | `HOMEOS_DEMO` | Initial Demo Mode for a new database |
 | `ADMIN_USERNAME`, `ADMIN_PASSWORD` | Optional first-run bootstrap credentials; leave blank for interactive setup |
 | `TZ` | Your IANA time zone |
+| `PUID`, `PGID` | User and group that own `/config` and MyFiles; HomeOS sets ownership on start (default `99`, `100`) |
+| `UMASK` | File creation mask (default `022`); the database and secrets always stay private |
 | `MYFILES_STORAGE_PATH` | Saved files path inside container; keep consistent with volume mapping |
 | `HOMEOS_HTTPS_ONLY` | Enable only when correct HTTPS proxy setup is in place |
 | `HOMEOS_TRUSTED_PROXIES` | Trusted reverse-proxy IPs/CIDRs, if used |

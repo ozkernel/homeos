@@ -7,6 +7,9 @@ services:
     ports:
       - "${HOMEOS_BIND:-127.0.0.1}:${HOMEOS_HOST_PORT:-3080}:3080"
     environment:
+      PUID: "${PUID:-99}"
+      PGID: "${PGID:-100}"
+      UMASK: "${UMASK:-022}"
       HOMEOS_DEMO: "${HOMEOS_DEMO:-true}"
       ADMIN_USERNAME: "${ADMIN_USERNAME:-}"
       ADMIN_PASSWORD: "${ADMIN_PASSWORD:-}"

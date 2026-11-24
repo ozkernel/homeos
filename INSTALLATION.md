@@ -39,7 +39,10 @@ Then choose **Docker → Add Container → HomeOS** from your user templates, re
 | Web UI port | `3080` |
 | Configuration storage | `/mnt/user/appdata/homeos/config` → `/config` |
 | MyFiles storage | `/mnt/user/appdata/homeos/myfiles` → `/app/data/myfiles` |
+| PUID / PGID | `99` / `100` (Unraid `nobody` / `users`) |
 | Recommended access | Trusted LAN or VPN |
+
+HomeOS creates its appdata folders and sets their ownership automatically, so no permission commands are needed.
 
 If the template isn't listed, return to the Docker Add Container page and check User Templates, or install the template manually from `templates/homeos.xml`.
 
