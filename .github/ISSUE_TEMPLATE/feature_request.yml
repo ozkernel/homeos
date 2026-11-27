@@ -2,6 +2,7 @@ name: Idea / feature request
 description: Suggest a new feature, integration or improvement for HomeOS
 title: "[Idea]: "
 labels: [enhancement]
+type: Feature
 body:
   - type: markdown
     attributes:
